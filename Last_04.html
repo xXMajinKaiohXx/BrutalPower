@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Incline Dumbbell Press</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-text-size-adjust: 100%;
+      touch-action: manipulation;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    body {
+      padding: 20px;
+    }
+    .exercise-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .exercise-subtitle {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .header-row, .set-row {
+      display: grid;
+      grid-template-columns: 40px 1fr 1fr 1fr 60px;
+      align-items: center;
+      gap: 5px;
+      text-align: center;
+    }
+    .header-row {
+      font-weight: bold;
+      padding: 6px 0;
+      font-size: 14px;
+      border-bottom: 1px solid #444;
+    }
+    .set-row {
+      padding: 10px 0 2px;
+    }
+    .log-field, .log-select {
+      background-color: #111;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 4px;
+      font-size: 14px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .log-select {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .set-row button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 5px;
+      font-size: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .set-row button.active {
+      background-color: #00cc44;
+    }
+    .set-meta {
+      font-size: 11px;
+      color: #888;
+      margin: 2px 0 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .set-separator {
+      border-bottom: 1px solid #444;
+      margin-bottom: 12px;
+    }
+    .rest {
+      display: inline-block;
+      min-width: 80px;
+      text-align: left;
+    }
+    .autoregulated {
+      border: 2px solid #007bff !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="exercise-title">Incline Dumbbell Press</div>
+  <div class="exercise-subtitle">4 sets × 8–10 @ RPE 9</div>
+
+  <div class="header-row">
+    <div>Set</div><div>Weight</div><div>Reps</div><div>RPE</div><div></div>
+  </div>
+  <div id="sets-container"></div>
+
+  <script>
+    const container = document.getElementById('sets-container');
+    const timers = {};
+    let baselineE1RM = null;
+
+    for (let i = 1; i <= 4; i++) {
+      const row = document.createElement("div");
+      row.className = "set-row";
+      row.innerHTML = `
+        <div>${i}</div>
+        <input type="number" class="log-field weight" data-set="${i}">
+        <input type="number" class="log-field reps" data-set="${i}">
+        <select class="log-field log-select rpe" data-set="${i}">
+          <option>-</option><option>6</option><option>7</option><option>8</option>
+          <option>9</option><option>10</option>
+        </select>
+        <button onclick="toggleSet(${i}, this)">Finish</button>
+      `;
+      container.appendChild(row);
+
+      const meta = document.createElement("div");
+      meta.className = "set-meta";
+      meta.innerHTML = `<span class="tempo">Tempo: 3-1-2-0</span><span class="rest" id="rest-${i}">Rest: 90s</span>`;
+      container.appendChild(meta);
+
+      const sep = document.createElement("div");
+      sep.className = "set-separator";
+      container.appendChild(sep);
+    }
+
+    function toggleSet(setNumber, btn) {
+      const weight = document.querySelector(`.weight[data-set='${setNumber}']`);
+      const reps = document.querySelector(`.reps[data-set='${setNumber}']`);
+      const rpe = document.querySelector(`.rpe[data-set='${setNumber}']`);
+      const restSpan = document.getElementById(`rest-${setNumber}`);
+
+      const w = parseFloat(weight.value);
+      const r = parseInt(reps.value);
+      const rp = parseInt(rpe.value);
+
+      if (!btn.classList.contains("active")) {
+        btn.classList.add("active");
+        btn.textContent = "Done";
+        weight.readOnly = true;
+        reps.readOnly = true;
+        rpe.disabled = true;
+
+        // Start timer
+        if (!timers[setNumber]) {
+          let seconds = 90;
+          timers[setNumber] = setInterval(() => {
+            if (seconds > 0) {
+              restSpan.textContent = "Rest: " + seconds + "s";
+              seconds--;
+            } else {
+              restSpan.textContent = "Rest: FIGHT!";
+              clearInterval(timers[setNumber]);
+            }
+          }, 1000);
+        }
+
+        // Autoregulation
+        if (!isNaN(w) && !isNaN(r) && !isNaN(rp)) {
+          const e1rm = Math.round(w * (1 + r * 0.0333));
+          if (setNumber === 1) {
+            baselineE1RM = e1rm;
+          } else if (baselineE1RM && setNumber < 4) {
+            const fatigue = 1 - (e1rm / baselineE1RM);
+            const nextWeight = document.querySelector(`.weight[data-set='${setNumber + 1}']`);
+            if (nextWeight && !nextWeight.readOnly) {
+              let adjusted = w;
+              if (fatigue > 0.05) adjusted -= 2.5;
+              else if (fatigue < -0.03) adjusted += 2.5;
+              adjusted = Math.round(adjusted * 2) / 2;
+              nextWeight.value = adjusted;
+              nextWeight.classList.add("autoregulated");
+            }
+          }
+        }
+      } else {
+        btn.classList.remove("active");
+        btn.textContent = "Finish";
+        weight.readOnly = false;
+        reps.readOnly = false;
+        rpe.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
