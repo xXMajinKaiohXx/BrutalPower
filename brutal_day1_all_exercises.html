@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 1 – Chest & Triceps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #f33;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #444;
+      font-size: 14px;
+    }
+    th {
+      background-color: #222;
+    }
+    input, select {
+      width: 60px;
+      padding: 4px;
+      font-size: 14px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
+    .button {
+      padding: 4px 8px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .done {
+      background-color: #900;
+    }
+    .done.active {
+      background-color: #090;
+    }
+    .timer {
+      color: #ccc;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Day 1 – Chest & Triceps</h1>
+<h2>Incline Dumbbell Press – 4 sets × 8–10 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>3-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>3-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>3-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>3-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Flat Chest Press Machine – 4 sets × 10–12 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Smith Incline Press – 4 sets × 8–10 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>90s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Machine Chest Fly – 4 sets × 12–15 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Cable Crossover (High to Low) – 4 sets × 15–20 @ RPE 8</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Triceps Rope Pushdown – 4 sets × 12–15 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Overhead Dumbbell Extension – 4 sets × 10–12 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-1-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table><h2>Machine Dips – 4 sets × 12–15 @ RPE 9</h2>
+    <table>
+      <tr>
+        <th>Set</th><th>Weight</th><th>Reps</th><th>RPE</th><th>Tempo</th><th>Rest</th><th>Timer</th><th>Done</th>
+      </tr>
+    
+        <tr>
+          <td>1</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><input type='number' placeholder='kg'></td>
+          <td><input type='number' placeholder='reps'></td>
+          <td>
+            <select>
+              <option>-</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </td>
+          <td>2-0-2-0</td>
+          <td>75s</td>
+          <td><button class="button" onclick="startTimer(this)">Start</button><div class="timer"> </div></td>
+          <td><button class="button done" onclick="this.classList.toggle('active')">Done</button></td>
+        </tr>
+        </table>
+<script>
+function startTimer(btn) {
+  const timerDiv = btn.nextElementSibling;
+  let time = 90;
+  timerDiv.textContent = time + "s";
+  const interval = setInterval(() => {
+    time--;
+    timerDiv.textContent = time + "s";
+    if (time <= 0) {
+      clearInterval(interval);
+      timerDiv.textContent = "Done";
+      timerDiv.style.color = "#0f0";
+    }
+  }, 1000);
+}
+</script>
+</body>
+</html>
